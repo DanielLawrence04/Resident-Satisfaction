@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Resident Satisfaction</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/lawtech_logo.png" />
+    <!--===============================================================================================-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <!--===============================================================================================-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+  <body>
+    <div class="feedback-container">
+      <div class="feedback-wrap">
+        <form class="resident-preface-form validate-form">
+          <span class="form-heading"> Resident Feedback Questionnaire </span>
+
+          <div class="form-field-wrap validate-input" data-validate="Name is required">
+            <label class="resident-label">Full name</label>
+            <input id="full-name" class="resident-input" type="text" name="name" placeholder="Please enter your name..." />
+            <span class="focus-resident-input"></span>
+          </div>
+
+          <div class="form-field-wrap validate-input" data-validate="Contact number is required">
+            <label class="resident-label">Contact Number</label>
+            <input id="contact-number" class="resident-input" type="tel" name="contact" placeholder="Please enter your contact number..." />
+            <span class="focus-resident-input"></span>
+          </div>
+
+          <div class="form-field-wrap">
+            <div class="resident-label">What Property?</div>
+            <div>
+              <select id="property-select" class="js-select2" name="service">
+                <option>Please Select</option>
+                <option>Medway Maritime Hospital, Gillingham</option>
+                <option>Kelson House, Isle of Dogs</option>
+                <option>Empress Heights, Southampton</option>
+              </select>
+              <div class="dropDownSelect2"></div>
+            </div>
+            <span class="focus-resident-input"></span>
+          </div>
+
+          <div class="container-resident-preface-form-btn">
+            <button class="resident-preface-form-btn">Continue</button>
+          </div>
+
+          <div class="resident-preface-form-social flex-c-m">
+            <a href="https://www.linkedin.com/company/lawtech-ltd/posts/?feedView=all" class="resident-preface-form-social-item flex-c-m bg1 m-r-5" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://x.com/LawtechGroup" class="resident-preface-form-social-item flex-c-m bg2 m-r-5" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            </a>
+          </div>
+        </form>
+
+        <form class="resident-feedback-form p-2">
+          <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-2 p-0 pt-3">
+              <img src="images/lawtech_logo.png" id="lawtech-logo-long" alt="LawTech Logo" />
+              <div class="text-end">
+                <span class="mb-0 fw-bold fs-3">Resident Satisfaction Survey</p>
+              </div>
+            </div>
+            <div class="mt-3 mb-5" style="height: 4px;background-color: #e0dddd;"></div>
+            <!-- Question 1 -->
+            <div class="row justify-content-center mb-5">
+              <span class="title-heading p-0 fw-bold mb-2">1. Overall, how satisfied, or dissatisfied are you with the external fire safety remediation works, to your building?</span>
+              <ul class="radio-list">
+                <li>
+                  <input type="radio" id="Q1checkboxOne" name="question1" value="Order one" />
+                  <label for="Q1checkboxOne">Very Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q1checkboxTwo" name="question1" value="Order Two" />
+                  <label for="Q1checkboxTwo">Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q1checkboxThree" name="question1" value="Order Three" />
+                  <label for="Q1checkboxThree">Neutral</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q1checkboxFour" name="question1" value="Order Four" />
+                  <label for="Q1checkboxFour">Dissatisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q1checkboxFive" name="question1" value="Order Five" />
+                  <label for="Q1checkboxFive">Very Dissatisfied</label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="row justify-content-center mb-5">
+              <span class="title-heading p-0 fw-bold mb-2">2. Now our works are complete, how satisfied or dissatisfied are you with the finish to the building?</span>
+              <ul class="radio-list">
+                <li>
+                  <input type="radio" id="Q2checkboxOne" name="question2" value="Order one" />
+                  <label for="Q2checkboxOne">Very Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q2checkboxTwo" name="question2" value="Order Two" />
+                  <label for="Q2checkboxTwo">Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q2checkboxThree" name="question2" value="Order Three" />
+                  <label for="Q2checkboxThree">Neutral</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q2checkboxFour" name="question2" value="Order Four" />
+                  <label for="Q2checkboxFour">Dissatisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q2checkboxFive" name="question2" value="Order Five" />
+                  <label for="Q2checkboxFive">Very Dissatisfied</label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="row justify-content-center mb-5">
+              <span class="title-heading p-0 fw-bold mb-2">3. Overall, how satisfied or dissatisfied are you with the service that was provided by the contractor, staff & workers?</span>
+              <ul class="radio-list">
+                <li>
+                  <input type="radio" id="Q3checkboxOne" name="question3" value="Order one" />
+                  <label for="Q3checkboxOne">Very Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q3checkboxTwo" name="question3" value="Order Two" />
+                  <label for="Q3checkboxTwo">Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q3checkboxThree" name="question3" value="Order Three" />
+                  <label for="Q3checkboxThree">Neutral</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q3checkboxFour" name="question3" value="Order Four" />
+                  <label for="Q3checkboxFour">Dissatisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q3checkboxFive" name="question3" value="Order Five" />
+                  <label for="Q3checkboxFive">Very Dissatisfied</label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="row justify-content-center mb-5">
+              <span class="title-heading p-0 fw-bold mb-2">4. How satisfied or dissatisfied are you with the communication and information before and during the works?</span>
+              <ul class="radio-list">
+                <li>
+                  <input type="radio" id="Q4checkboxOne" name="question4" value="Order one" />
+                  <label for="Q4checkboxOne">Very Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q4checkboxTwo" name="question4" value="Order Two" />
+                  <label for="Q4checkboxTwo">Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q4checkboxThree" name="question4" value="Order Three" />
+                  <label for="Q4checkboxThree">Neutral</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q4checkboxFour" name="question4" value="Order Four" />
+                  <label for="Q4checkboxFour">Dissatisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q4checkboxFive" name="question4" value="Order Five" />
+                  <label for="Q4checkboxFive">Very Dissatisfied</label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="row justify-content-center mb-5">
+              <span class="title-heading p-0 fw-bold mb-2">5. How satisfied or dissatisfied are you that workers showed ID?</span>
+              <ul class="radio-list">
+                <li>
+                  <input type="radio" id="Q5checkboxOne" name="question5" value="Order one" />
+                  <label for="Q5checkboxOne">Very Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q5checkboxTwo" name="question5" value="Order Two" />
+                  <label for="Q5checkboxTwo">Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q5checkboxThree" name="question5" value="Order Three" />
+                  <label for="Q5checkboxThree">Neutral</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q5checkboxFour" name="question5" value="Order Four" />
+                  <label for="Q5checkboxFour">Dissatisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q5checkboxFive" name="question5" value="Order Five" />
+                  <label for="Q5checkboxFive">Very Dissatisfied</label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="row justify-content-center mb-5">
+              <span class="title-heading p-0 fw-bold mb-2">6. How satisfied or dissatisfied are you that the works was carried out in a clean and tidy manner?</span>
+              <ul class="radio-list">
+                <li>
+                  <input type="radio" id="Q6checkboxOne" name="question6" value="Order one" />
+                  <label for="Q6checkboxOne">Very Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q6checkboxTwo" name="question6" value="Order Two" />
+                  <label for="Q6checkboxTwo">Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q6checkboxThree" name="question6" value="Order Three" />
+                  <label for="Q6checkboxThree">Neutral</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q6checkboxFour" name="question6" value="Order Four" />
+                  <label for="Q6checkboxFour">Dissatisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q6checkboxFive" name="question6" value="Order Five" />
+                  <label for="Q6checkboxFive">Very Dissatisfied</label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="row justify-content-center mb-5">
+              <span class="title-heading p-0 fw-bold mb-2">7. How satisfied or dissatisfied are you that work started and was completed when expected?</span>
+              <ul class="radio-list">
+                <li>
+                  <input type="radio" id="Q7checkboxOne" name="question7" value="Order one" />
+                  <label for="Q7checkboxOne">Very Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q7checkboxTwo" name="question7" value="Order Two" />
+                  <label for="Q7checkboxTwo">Satisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q7checkboxThree" name="question7" value="Order Three" />
+                  <label for="Q7checkboxThree">Neutral</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q7checkboxFour" name="question7" value="Order Four" />
+                  <label for="Q7checkboxFour">Dissatisfied</label>
+                </li>
+                <li>
+                  <input type="radio" id="Q7checkboxFive" name="question7" value="Order Five" />
+                  <label for="Q7checkboxFive">Very Dissatisfied</label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Additional Comments -->
+            <div class="row justify-content-center mb-5">
+              <div class="form-field-wrap validate-input" data-validate="Message is required">
+                <label class="resident-label" for="message">Additional Comments</label>
+                <textarea id="message" class="resident-input" name="message" placeholder="Type your message here..."></textarea>
+                <span class="focus-resident-input"></span>
+              </div>
+            </div>
+
+            <!-- Signautre Pad -->
+            <div class="row justify-content-center mb-3">
+              <div class="form-field-wrap validate-input" data-validate="Message is required">
+                <label class="resident-label" for="message">Signature</label>
+                <canvas width="275" class="signature-pad d-block mx-auto my-1"></canvas>
+                <span class="clear-button mb-2">Clear</span>
+              </div>
+            </div>
+      
+              <button type="submit" class="btn btn-primary fw-bold mb-5 w-100">Submit</button>
+          </div>
+        </form>
+
+        <div class="contact100-more flex-col-c-m" style="background-image: url('images/background.png')">
+          <div class="contact100-overlay"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import {initializeApp} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+      import {getDatabase, ref as dbRef, push, set} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+      import {getStorage, ref as storageRef, uploadBytes} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-storage.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAdMHtst-godIp-Nuk9hX4gcQuyzfcZ4wI",
+        authDomain: "lawtechsatisfationform.firebaseapp.com",
+        databaseURL: "https://lawtechsatisfationform-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "lawtechsatisfationform",
+        storageBucket: "lawtechsatisfationform.appspot.com",
+        messagingSenderId: "99040586950",
+        appId: "1:99040586950:web:6f236e3f53e3b8c448fbc7",
+        measurementId: "G-HY7WQ9YN6B",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const storage = getStorage(app);
+
+      $(".resident-feedback-form").on("submit", function (e) {
+        e.preventDefault();
+
+        // Remove any previous alerts
+        $(".resident-feedback-form .alert").remove();
+
+        // Remove previous error indicators/messages
+        $(".resident-feedback-form .test-result").remove();
+        $(".resident-feedback-form .validation-error").remove();
+        $(".radio-list input").removeClass("is-invalid");
+        $(".form-field-wrap .signature-pad").removeClass("is-invalid");
+
+        let valid = true;
+        let questionError = false;
+        let signatureError = false;
+        let errorMsg = "";
+
+        // Check all radio questions
+        for (let i = 1; i <= 7; i++) {
+          const checked = $(`input[name="question${i}"]:checked`);
+          if (checked.length === 0) {
+            // Add error styling to that question's inputs
+            $(`input[name="question${i}"]`).addClass("is-invalid");
+            questionError = true;
+            valid = false;
+          }
+        }
+
+        // Check if signature pad is blank
+        function isCanvasBlank(canvas) {
+          const context = canvas.getContext("2d");
+          const pixelBuffer = new Uint32Array(context.getImageData(0, 0, canvas.width, canvas.height).data.buffer);
+          return !pixelBuffer.some((color) => color !== 0);
+        }
+
+        const canvas = $(".signature-pad")[0];
+        if (!canvas || isCanvasBlank(canvas)) {
+          $(".signature-pad").addClass("is-invalid");
+          signatureError = true;
+          valid = false;
+        }
+
+        // Display relevant error messages
+        let alertMessages = [];
+        if (questionError) {
+          alertMessages.push("<Strong>Error! </Strong>Please answer every question.");
+        }
+        if (signatureError) {
+          alertMessages.push("<Strong>Error! </Strong>Please provide your signature.");
+        }
+        if (alertMessages.length > 0) {
+          $(".resident-feedback-form").prepend(`
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>${alertMessages.join("<br>")}
+    </div>
+  `);
+          return; // Do not continue
+        }
+
+        // Gather all form data
+        const propertyName = $("#property-select").val();
+        const userName = $("#full-name").val().trim();
+        const userContactNumber = $("#contact-number").val().trim();
+        const furtherComments = $("#message").val();
+        const date = Date.now();
+
+        // Gather radio answers as integers
+        let questions = {};
+        for (let i = 1; i <= 7; i++) {
+          // Find index (0-based) of the checked radio in its group
+          const radios = $(`input[name="question${i}"]`);
+          let selectedIndex = -1;
+          radios.each(function (idx) {
+            if ($(this).is(":checked")) selectedIndex = idx;
+          });
+          questions[`q${i}`] = selectedIndex; // match what your DB expects
+        }
+
+        const formData = {
+          date,
+          furtherComments,
+          propertyName,
+          ...questions,
+          userContactNumber,
+          userName,
+        };
+        // Get signature as Blob
+        if (!canvas) return;
+        // Convert canvas to blob for uploading
+        canvas.toBlob(async function (blob) {
+          try {
+            // 1. Push a new entry to the forms node in your Realtime DB
+            const newFormRef = push(dbRef(database, "forms"));
+            await set(newFormRef, formData);
+            const formKey = newFormRef.key;
+
+            // 2. Upload the signature to Storage, using the same key as the filename
+            const sigRef = storageRef(storage, `signatures/${formKey}.png`);
+            await uploadBytes(sigRef, blob);
+
+            // 3. (Optional) Get the signature's download URL and update the DB
+            // const url = await getDownloadURL(sigRef);
+            // await set(newFormRef, { ...formData, signatureUrl: url });
+
+            alert("Form submitted successfully!");
+            location.reload();
+          } catch (err) {
+            alert("Submission failed. Please try again.\n" + err);
+          }
+        }, "image/png");
+      });
+    </script>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
