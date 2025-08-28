@@ -63,7 +63,7 @@ $(document).ready(function () {
     if (property === "") {
       $("#property").addClass("is-invalid");
       if ($("#property-error").length === 0) {
-        $("<div id='property-error' style='color:#d8000c;margin-top:5px;padding-left:26px;'>Please enter the property.</div>").insertAfter($("#property"));
+        $("<div id='property-error' style='color:#d8000c;margin-top:5px;padding-left:26px;'>Please enter the property name.</div>").insertAfter($("#property"));
       }
       isValid = false;
     }
@@ -140,3 +140,4 @@ $(document).ready(function () {
     clearPad();
   });
 });
+
