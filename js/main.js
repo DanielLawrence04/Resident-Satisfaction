@@ -48,15 +48,24 @@ $(document).ready(function () {
       isValid = false;
     }
 
-    const property = $("#property-select").val();
-    if (!property || property === "Please Select") {
-      $(".js-select2").addClass("is-invalid");
+    // const property = $("#property-select").val();
+    // if (!property || property === "Please Select") {
+    //   $(".js-select2").addClass("is-invalid");
+    //   if ($("#property-error").length === 0) {
+    //     $("<div id='property-error' style='color:#d8000c;margin-top:5px;padding-left:26px;'>Please select a property.</div>").insertAfter($(".js-select2").next(".select2"));
+    //   }
+    //   isValid = false;
+    // } else {
+    //   $("#property-error").remove();
+    // }
+
+    const property = $("#property").val().trim();
+    if (property === "") {
+      $("#property").addClass("is-invalid");
       if ($("#property-error").length === 0) {
-        $("<div id='property-error' style='color:#d8000c;margin-top:5px;padding-left:26px;'>Please select a property.</div>").insertAfter($(".js-select2").next(".select2"));
+        $("<div id='property-error' style='color:#d8000c;margin-top:5px;padding-left:26px;'>Please enter the property.</div>").insertAfter($("#property"));
       }
       isValid = false;
-    } else {
-      $("#property-error").remove();
     }
 
     if (!isValid) {
@@ -74,8 +83,9 @@ $(document).ready(function () {
   });
 
   // Remove error state when user changes input
-  $("#full-name, #contact-number").on("input", function () {
+  $("#full-name, #contact-number, #property").on("input", function () {
     $(this).removeClass("is-invalid");
+    $("#property-error").remove();
   });
   $("#property-select").on("change", function () {
     $(".js-select2").removeClass("is-invalid");
