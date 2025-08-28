@@ -34,7 +34,13 @@
             <span class="focus-resident-input"></span>
           </div>
 
-          <div class="form-field-wrap">
+          <div class="form-field-wrap validate-input" data-validate="Property is required">
+            <label class="resident-label">Property</label>
+            <input id="property" class="resident-input" type="text" name="contact" placeholder="Please enter the property..." />
+            <span class="focus-resident-input"></span>
+          </div>
+
+          <!-- <div class="form-field-wrap">
             <div class="resident-label">What Property?</div>
             <div>
               <select id="property-select" class="js-select2" name="service">
@@ -46,7 +52,7 @@
               <div class="dropDownSelect2"></div>
             </div>
             <span class="focus-resident-input"></span>
-          </div>
+          </div> -->
 
           <div class="container-resident-preface-form-btn">
             <button class="resident-preface-form-btn">Continue</button>
@@ -380,7 +386,7 @@
         }
 
         // Gather all form data
-        const propertyName = $("#property-select").val();
+        const propertyName = $("#property").val();
         const userName = $("#full-name").val().trim();
         const userContactNumber = $("#contact-number").val().trim();
         const furtherComments = $("#message").val();
