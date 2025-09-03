@@ -18,33 +18,38 @@ $(document).ready(function () {
   });
 
   // Initialise Select2
-  $(".js-select2").select2({
-    minimumResultsForSearch: 20,
-    dropdownParent: $(".js-select2").parent().find(".dropDownSelect2"),
-  });
+  // $(".js-select2").select2({
+  //   minimumResultsForSearch: 20,
+  //   dropdownParent: $(".js-select2").parent().find(".dropDownSelect2"),
+  // });
 
   // Form validation on submit
   $(".resident-preface-form").on("submit", function (e) {
+    // setting initial as true
     let isValid = true;
     $(".resident-input, .js-select2").removeClass("is-invalid");
-    $("#full-name-error, #contact-number-error, #property-error").remove();
+    $("#contact-number").closest(".form-field-wrap").removeClass("is-invalid");
+    // hiding all error messages
+    $("#full-name-error, #contact-number-error, #property-error").hide();
 
     const fullName = $("#full-name").val().trim();
     if (fullName === "") {
       $("#full-name").addClass("is-invalid");
-      if ($("#full-name-error").length === 0) {
-        $("<div id='full-name-error' style='color:#d8000c;margin-top:5px;padding-left:26px;'>Please enter your full name.</div>").insertAfter($("#full-name"));
-      }
+      $("#full-name-error").show();
       isValid = false;
     }
 
     const contactNumber = $("#contact-number").val().trim();
+    if (contactNumber === "" || !window.iti.isValidNumber()) {
+      $("#contact-number").closest(".form-field-wrap").addClass("is-invalid");
+      $("#contact-number-error").show();
+      isValid = false;
+    }
 
-    if (contactNumber === "") {
-      $("#contact-number").addClass("is-invalid");
-      if ($("#contact-number-error").length === 0) {
-        $("<div id='contact-number-error' style='color:#d8000c;margin-top:5px;padding-left:26px;'>Please enter your contact number.</div>").insertAfter($("#contact-number"));
-      }
+    const property = $("#property").val().trim();
+    if (property === "") {
+      $("#property").addClass("is-invalid");
+      $("#property-error").show();
       isValid = false;
     }
 
@@ -58,15 +63,6 @@ $(document).ready(function () {
     // } else {
     //   $("#property-error").remove();
     // }
-
-    const property = $("#property").val().trim();
-    if (property === "") {
-      $("#property").addClass("is-invalid");
-      if ($("#property-error").length === 0) {
-        $("<div id='property-error' style='color:#d8000c;margin-top:5px;padding-left:26px;'>Please enter the property name.</div>").insertAfter($("#property"));
-      }
-      isValid = false;
-    }
 
     if (!isValid) {
       e.preventDefault();
@@ -83,14 +79,23 @@ $(document).ready(function () {
   });
 
   // Remove error state when user changes input
-  $("#full-name, #contact-number, #property").on("input", function () {
+  $("#full-name, #property").on("input", function () {
     $(this).removeClass("is-invalid");
-    $("#property-error").remove();
+    const errorId = $(this).attr("id") + "-error"; // e.g., "full-name-error"
+    $("#" + errorId).hide();
   });
-  $("#property-select").on("change", function () {
-    $(".js-select2").removeClass("is-invalid");
-    $("#property-error").remove();
+
+  // Seperate for contact number
+  $("#contact-number").on("input", function () {
+    $("#contact-number").closest(".form-field-wrap").removeClass("is-invalid");
+    const errorId = $(this).attr("id") + "-error"; // e.g., "full-name-error"
+    $("#" + errorId).hide();
   });
+
+  // $("#property-select").on("change", function () {
+  //   $(".js-select2").removeClass("is-invalid");
+  //   $("#property-error").remove();
+  // });
 
   const canvas = document.querySelector("canvas");
   const clearButton = document.querySelector(".clear-button");
@@ -140,4 +145,3 @@ $(document).ready(function () {
     clearPad();
   });
 });
-
