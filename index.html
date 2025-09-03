@@ -15,8 +15,18 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+
+    <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+   
   </head>
   <body>
+</div>
     <div class="feedback-container">
       <div class="feedback-wrap">
         <form class="resident-preface-form validate-form">
@@ -28,17 +38,24 @@
             <span class="focus-resident-input"></span>
           </div>
 
-          <div class="form-field-wrap validate-input" data-validate="Contact number is required">
+          <div id="full-name-error" class="error-message">Please enter your full name.</div>
+
+          <div class="form-field-wrap validate-input mt-3" data-validate="Contact number is required">
             <label class="resident-label">Contact Number</label>
-            <input id="contact-number" class="resident-input" type="tel" name="contact" placeholder="Please enter your contact number..." />
+            <input id="contact-number" class="resident-input" type="tel" name="phone" />
             <span class="focus-resident-input"></span>
           </div>
 
-          <div class="form-field-wrap validate-input" data-validate="Property is required">
+          <div id="contact-number-error" class="error-message">Please enter a valid phone number.</div>
+
+          <div class="form-field-wrap validate-input mt-3" data-validate="Property is required">
             <label class="resident-label">Property</label>
-            <input id="property" class="resident-input" type="text" name="contact" placeholder="Please enter the property..." />
+            <input id="property" class="resident-input" type="text" name="property" placeholder="Please enter the property..." />
             <span class="focus-resident-input"></span>
           </div>
+
+          <div id="property-error" class="error-message">Please enter the property.</div>
+
 
           <!-- <div class="form-field-wrap">
             <div class="resident-label">What Property?</div>
@@ -54,7 +71,7 @@
             <span class="focus-resident-input"></span>
           </div> -->
 
-          <div class="container-resident-preface-form-btn">
+          <div class="container-resident-preface-form-btn mt-3">
             <button class="resident-preface-form-btn">Continue</button>
           </div>
 
@@ -301,6 +318,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
     <script type="module">
+      const input = document.querySelector("#contact-number");
+      window.iti = window.intlTelInput(input, {
+        initialCountry: "gb", // set default (e.g., "us", "gb", "de")
+        preferredCountries: ["us", "gb", "de", "fr"], // the top options in the list
+        separateDialCode: true, // shows dial code separately, e.g. +44
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js", // for formatting/validation
+      });
       // Import the functions you need from the SDKs you need
       import {initializeApp} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
       import {getDatabase, ref as dbRef, push, set} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
@@ -388,7 +412,7 @@
         // Gather all form data
         const propertyName = $("#property").val();
         const userName = $("#full-name").val().trim();
-        const userContactNumber = $("#contact-number").val().trim();
+        const userContactNumber = iti.getNumber(); 
         const furtherComments = $("#message").val();
         const date = Date.now();
 
@@ -442,4 +466,3 @@
     <script src="js/main.js"></script>
   </body>
 </html>
-
